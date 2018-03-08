@@ -5,14 +5,15 @@ import { HttpModule } from '@angular/http'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { appRoutes } from './routes'
-import { AppComponent }  from './components/app.component';
-import { NavBarComponent }  from './components/nav-bar.component';
-import { CatalogComponent } from "./components/catalog.component";
-import { RegisterComponent } from "./components/sign-in.component";
-import { SignInComponent } from "./components/sign-in.component";
+import { AppComponent }  from './app.component';
+import { NavBarComponent }  from './nav-bar.component';
+import { CatalogComponent } from "./catalog/catalog.component";
+import { RegisterComponent } from "./users/register.component";
+import { SignInComponent } from "./users/sign-in.component";
 import { LoadingComponent } from "./components/loading-spinner.component";
-import { DataRepositoryService } from "./services/data-repository"
-import { AccountMenuComponent } from "./components/account-menu.component";
+import { CatalogRepositoryService } from "./catalog/catalog-repository.service"
+import { UserRepositoryService } from './services/user-repository.service';
+import { AccountMenuComponent } from "./account-menu.component";
 
 @NgModule({
   imports:      [
@@ -31,7 +32,7 @@ import { AccountMenuComponent } from "./components/account-menu.component";
     LoadingComponent,
     AccountMenuComponent
   ],
-  providers: [ DataRepositoryService ],
+  providers: [ CatalogRepositoryService, UserRepositoryService ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
