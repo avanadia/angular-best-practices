@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { CatalogRepositoryService } from "./catalog-repository.service";
 import { UserRepositoryService } from '../core/user-repository.service';
@@ -9,14 +9,14 @@ import { FilterClassesService } from './filter-classes.service';
   templateUrl: './catalog.component.html'
 })
 
-export class CatalogComponent {
+export class CatalogComponent implements OnInit {
   classes:any[];
   visibleClasses:any[];
 
   constructor(private userRepository: UserRepositoryService,
               private catalogRepository: CatalogRepositoryService,
-              private filterClassesService: FilterClassesService) {}
-
+              private filterClassesService: FilterClassesService) { }
+  
   ngOnInit() {
     this.catalogRepository.getCatalog()
       .subscribe(classes => { this.classes = classes; this.applyFilter('')});
