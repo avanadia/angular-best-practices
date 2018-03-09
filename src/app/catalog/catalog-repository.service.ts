@@ -7,8 +7,7 @@ import { UserRepositoryService } from '../core/user-repository.service';
 @Injectable()
 export class CatalogRepositoryService {
   
-
-  constructor(private userRepository: UserRepositoryService) {}
+  constructor(private userRepository: UserRepositoryService) { }
 
   getCatalog():Observable<any[]> {
     const subject = new Subject<any>();
