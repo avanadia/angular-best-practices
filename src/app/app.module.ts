@@ -9,6 +9,7 @@ import { AppComponent }  from './app.component';
 import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from './core/core.module';
 import { CatalogModule } from './catalog/catalog.module';
+import { UserModule } from './users/user.module';
 
 @NgModule({
   imports:      [
@@ -19,6 +20,7 @@ import { CatalogModule } from './catalog/catalog.module';
     CoreModule,
     SharedModule,
     CatalogModule,
+    UserModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
