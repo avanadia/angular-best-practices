@@ -4,9 +4,9 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserRepositoryService {
-  currentUser:any;
+  currentUser: any;
 
-  constructor() {}
+  constructor() { }
 
   saveUser(user): Observable<any> {
     user.classes = user.classes || [];
