@@ -6,12 +6,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { appRoutes } from './routes'
 import { AppComponent }  from './app.component';
-import { CatalogComponent } from "./catalog/catalog.component";
 import { RegisterComponent } from "./users/register.component";
 import { SignInComponent } from "./users/sign-in.component";
-import { LoadingSpinnerComponent } from "./components/loading-spinner.component";
-import { CatalogRepositoryService } from "./catalog/catalog-repository.service";
+import { SharedModule } from "./shared/shared.module";
 import { CoreModule } from './core/core.module';
+import { CatalogModule } from './catalog/catalog.module';
 
 @NgModule({
   imports:      [
@@ -20,16 +19,16 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     ReactiveFormsModule,
     CoreModule,
+    SharedModule,
+    CatalogModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     AppComponent,
-    CatalogComponent,
     RegisterComponent,
-    SignInComponent,
-    LoadingSpinnerComponent
+    SignInComponent
   ],
-  providers: [ CatalogRepositoryService ],
+  providers: [ ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
