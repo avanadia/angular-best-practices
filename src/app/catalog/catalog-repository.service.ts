@@ -17,7 +17,8 @@ export class CatalogRepositoryService {
         let enrolled = {enrolled: currentUser.classes.includes(catalogClass.classId)};
         return Object.assign(catalogClass, enrolled);
       });
-    setTimeout(() => {subject.next(catalogWithEnrollmentStatus); subject.complete();}, 200);
+    setTimeout(() => {subject.next(catalogWithEnrollmentStatus); 
+      subject.complete();}, 200);
 
     return subject;
   }
